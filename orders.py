@@ -63,25 +63,26 @@ def raises_not_found(orders: list[dict], order_id: str) -> bool:
 
 # 5. Sample order data
 ORDERS = [
-    {"order_id": "01", "status": "shipped", "total": 120.0},
-    {"order_id": "02", "status": "processing", "total": 75.0},
-    {"order_id": "03", "status": "delivered", "total": 299.0},
+    {"order_id": "01", "status": "shipped", "total": 120.0}
+#  {"order_id": "02", "status": "processing", "total": 75.0},
+#  {"order_id": "03", "status": "delivered", "total": 299.0},
 ]
 
 
 # 6. Run the application
 if __name__ == "__main__":
 
-    print("=== ORDER LOOKUP SYSTEM ===")
+# print("=== ORDER LOOKUP SYSTEM ===")
 
     print(describe_order(ORDERS, "01"))
     print(describe_order(ORDERS, "09"))
 
-    print(raises_not_found(ORDERS, "09"))
-    print(raises_not_found(ORDERS, "01"))
-
+ #   print(raises_not_found(ORDERS, "09"))
+ #   print(raises_not_found(ORDERS, "01"))
+#
     # Demonstrate invalid input
     try:
         lookup_order(ORDERS, "")
     except ValueError as error:
         print("Validation Error:", error)
+        
